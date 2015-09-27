@@ -22,17 +22,5 @@ public class PlayerController : MonoBehaviour {
         
 	}
 
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Pick Up"))
-        {
-            if(total < 8) {
-                other.gameObject.transform.position = new Vector3(Random.Range(-10.0f, 10.0f), 0.5f, Random.Range(-10.0f, 10.0f));
-                total++;
-            } else {
-                other.gameObject.SetActive(false);
-              }
-            //other.gameObject.SetActive(false);
-        }
-    }
+    
 }
