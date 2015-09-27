@@ -4,7 +4,7 @@ using System.Collections;
 public class MoveTo : MonoBehaviour
 {
     NavMeshAgent agent;
-	
+    
 	public int total = 4;
 
     void Start()
@@ -21,6 +21,8 @@ public class MoveTo : MonoBehaviour
             if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100))
             {
                 agent.destination = hit.point;
+                Save save = new Save(hit.point.x.ToString(),hit.point.y.ToString(),hit.point.z.ToString());
+               
             }
         }
     }
