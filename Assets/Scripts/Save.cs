@@ -3,32 +3,17 @@ using System.Collections;
 using System.Text;
 using System.IO;
 
-public class Save : MonoBehaviour {
-    string posicionClicX = null;
-    string posicionClicY = null;
-    string posicionClicZ = null;
+public class Save
+{
 
-    public Save(string posicionX, string posicionY, string posicionZ)
+    public void Savecsv(string posicionX, string posicionY, string posicionZ)
     {
-        posicionClicX = posicionX;
-        posicionClicY = posicionY;
-        posicionClicZ = posicionZ;
-        Savecsv();
-    }
-    // Use this for initialization
-    void Start()
-    {
-        Savecsv();
-    }
-
-    void Savecsv()
-    {
-        string filePath = @"F:/Saved_data.csv";
+        string filePath = @"./Saved_data.csv";
         string delimiter = ",";
 
         string[][] output = new string[][]{
              //new string[]{"Posicion X", "Posicion Y", "Posicion Z"},
-             new string[]{posicionClicX, posicionClicY, posicionClicZ}
+             new string[]{posicionX, posicionY, posicionZ}
          };
         int length = output.GetLength(0);
         StringBuilder sb = new StringBuilder();
@@ -42,8 +27,8 @@ public class Save : MonoBehaviour {
         {
             File.AppendAllText(filePath, sb.ToString());
         }
-        
+
     }
 
-    
+
 }
