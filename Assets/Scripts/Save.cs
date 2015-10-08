@@ -6,19 +6,20 @@ using System.IO;
 public class Save
 {
 
-    public void Savecsv(string posicionX, string posicionY, string posicionZ)
+    public void Savecsv(string[] j1, string[] j2, string target)
     {
         string filePath = @"./Saved_data.csv";
         string delimiter = ",";
 
-        string[][] output = new string[][]{
-             //new string[]{"Posicion X", "Posicion Y", "Posicion Z"},
-             new string[]{posicionX, posicionY, posicionZ}
-         };
-        int length = output.GetLength(0);
+        string[] output = new string[11];
+        for (int i = 0; i < 5; i++)
+        {
+            output[i] = j1[i];
+            output[i + 5] = j2[i];
+        }
+        output[10] = target;
         StringBuilder sb = new StringBuilder();
-        for (int index = 0; index < length; index++)
-            sb.AppendLine(string.Join(delimiter, output[index]));
+        sb.AppendLine(string.Join(delimiter, output));
         if (!File.Exists(filePath))
         {
             File.WriteAllText(filePath, sb.ToString());
