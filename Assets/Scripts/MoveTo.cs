@@ -22,7 +22,7 @@ public class MoveTo : MonoBehaviour
 
 			if (Physics.Raycast (Camera.main.ScreenPointToRay (Input.mousePosition), out hit, 100)) {
 				agent.destination = hit.point;
-				agent.GetComponent<NavMeshAgent> ().CalculatePath (hit.point, path);
+				agent.CalculatePath (hit.point, path);
 				//distance = path.corners[0].magnitude;
 				for (int i = 0; i < path.corners.Length-1; i++) {
 					distance = distance + Vector3.Distance (path.corners [i], path.corners [i + 1]);
@@ -34,6 +34,4 @@ public class MoveTo : MonoBehaviour
 			}
 		}
 	}
-
-	
 }

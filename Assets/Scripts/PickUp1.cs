@@ -19,18 +19,9 @@ public class PickUp1 : MonoBehaviour
         if (other.gameObject.CompareTag("Pick Up1") || other.gameObject.CompareTag("Pick Up2") || other.gameObject.CompareTag("Pick Up3") ||
         other.gameObject.CompareTag("Pick Up4") || other.gameObject.CompareTag("Pick Up5"))
         {
-            // if (total < numeroObjetos)
-            //{
             StartCoroutine(Do(other));
             other.gameObject.SetActive(false);
-            //total++;
-            //}
-            /*else
-            {
-                other.gameObject.SetActive(false);
-            }*/
-            //other.gameObject.SetActive(false);
-        }
+           }
 
     }
 

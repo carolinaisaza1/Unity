@@ -47,7 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\CameraController.cs" />
-     <Compile Include="Assets\Scripts\LeerTexto.cs" />
+     <Compile Include="Assets\Scripts\Distance.cs" />
      <Compile Include="Assets\Scripts\MoveTo.cs" />
      <Compile Include="Assets\Scripts\PausaE.cs" />
      <Compile Include="Assets\Scripts\PickUp1.cs" />
