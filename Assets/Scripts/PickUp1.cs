@@ -19,9 +19,10 @@ public class PickUp1 : MonoBehaviour
         if (other.gameObject.CompareTag("Pick Up1") || other.gameObject.CompareTag("Pick Up2") || other.gameObject.CompareTag("Pick Up3") ||
         other.gameObject.CompareTag("Pick Up4") || other.gameObject.CompareTag("Pick Up5"))
         {
-            StartCoroutine(Do(other));
+           // StartCoroutine(Do(other));
             other.gameObject.SetActive(false);
             other.gameObject.transform.position = new Vector3(Random.Range(-10.0f, 10.0f), 0.5f, Random.Range(-10.0f, 10.0f));
+            other.gameObject.SetActive(true);
         }
 
     }
