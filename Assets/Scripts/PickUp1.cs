@@ -21,14 +21,15 @@ public class PickUp1 : MonoBehaviour
         {
             StartCoroutine(Do(other));
             other.gameObject.SetActive(false);
-           }
+            other.gameObject.transform.position = new Vector3(Random.Range(-10.0f, 10.0f), 0.5f, Random.Range(-10.0f, 10.0f));
+        }
 
     }
 
     private IEnumerator<WaitForSeconds> Do(Collider other)
     {
         yield return new WaitForSeconds(3);   //Wait
-        other.gameObject.transform.position = new Vector3(Random.Range(-10.0f, 10.0f), 0.5f, Random.Range(-10.0f, 10.0f));
+        
         other.gameObject.SetActive(true);
     }
 
