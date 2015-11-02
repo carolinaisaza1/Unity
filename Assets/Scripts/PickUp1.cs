@@ -23,6 +23,8 @@ public class PickUp1 : MonoBehaviour
             other.gameObject.SetActive(false);
             other.gameObject.transform.position = new Vector3(Random.Range(-10.0f, 10.0f), 0.5f, Random.Range(-10.0f, 10.0f));
             other.gameObject.SetActive(true);
+            Prediction pred = new Prediction();
+            pred.start();
         }
 
     }
