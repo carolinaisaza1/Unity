@@ -134,23 +134,31 @@ public class Prediction  {
         return res;
     }
 
-    public void start()
+    public int start(double[] input)
     {
         StreamReader pesoOculta = new StreamReader(@"./pesos_capa_oculta.csv");
         StreamReader pesoSalida = new StreamReader(@"./pesos_capa_salida.csv");
         StreamReader biasOculta = new StreamReader(@"./bias_capa_oculta.csv");
         StreamReader biasSalida = new StreamReader(@"./bias_capa_salida.csv");
-        double[] input = {14.04783, 22.05579, 15.68433, 4.992449, 31.47406, 14.51276, 20.58669, 16.21429, 18.98648, 19.15538};
+        //double[] input = {14.04783, 22.05579, 15.68433, 4.992449, 31.47406, 14.51276, 20.58669, 16.21429, 18.98648, 19.15538};
         double[,] wOcultas = readFile(pesoOculta, 105, 10);
         double[,] wSalidas = readFile(pesoSalida, 5 , 105 );
         double[,] bSalida = readFile(biasSalida,5 , 1);
         double[,] bOcultas = readFile(biasOculta, 105, 1);
         double[] rCapaOculta = capaOculta(wOcultas,input, bOcultas);
         double[] salida = capaSalida(rCapaOculta, wSalidas, bSalida);
+        int objetoSelec = 0;
+        double maxValue = 0.0;
         for(int i =0; i< salida.Length; i++)
         {
-            Debug.Log(salida[i]);
+            if(salida[i]> maxValue)
+            {
+                maxValue = salida[i];
+                objetoSelec = i + 1;
+            }
         }
+        return objetoSelec;
+
     }
 
 }
