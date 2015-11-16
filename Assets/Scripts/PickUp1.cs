@@ -24,7 +24,7 @@ public class PickUp1 : MonoBehaviour
     string target;
     Save save = new Save();
     Puntajes puntaje = new Puntajes();
-
+    Prediction pred = new Prediction();
     void Start()
     {
         pathj1 = new NavMeshPath();
@@ -32,9 +32,7 @@ public class PickUp1 : MonoBehaviour
         picks = new GameObject[] { p1, p2, p3, p4, p5 };
         distancesJ1 = new double[5];
         distancesJ2 = new double[5];
-        Prediction pred = new Prediction();
-        int select = pred.start(Distance());
-        mover(select);
+        StartCoroutine(Do());
     }
 
     // Update is called once per frame
@@ -65,11 +63,11 @@ public class PickUp1 : MonoBehaviour
 
     }
 
-    private IEnumerator<WaitForSeconds> Do(Collider other)
+    private IEnumerator<WaitForSeconds> Do()
     {
-        yield return new WaitForSeconds(3);   //Wait
-        
-        other.gameObject.SetActive(true);
+        yield return new WaitForSeconds(1);   //Wait
+        int select = pred.start(Distance());
+        mover(select);
     }
 
     double [] Distance()

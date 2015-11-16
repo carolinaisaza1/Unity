@@ -8,7 +8,8 @@ public class TiempoPartida : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-       tiempo = 30;
+       tiempo = puntaje.getTime();
+        Debug.Log(tiempo);
 	}
 	
 	// Update is called once per frame
@@ -19,11 +20,8 @@ public class TiempoPartida : MonoBehaviour {
         }
         if(tiempo <= 0)
         {
-            tiempo = 30;
-            Debug.Log(puntaje.getPuntaje1());
-            Debug.Log(puntaje.getPuntaje2());
-
-            //Application.LoadLevel("pausa");
+            tiempo = puntaje.getTime();
+            Application.LoadLevel("pausa");
         }
 
 	}

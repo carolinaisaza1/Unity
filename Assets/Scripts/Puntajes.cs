@@ -5,6 +5,7 @@ public class Puntajes {
 
     static private int puntaje1;
     static private int puntaje2;
+    static int time;
 
     public void setPuntaje1(int puntos)
     {
@@ -24,5 +25,15 @@ public class Puntajes {
     public int getPuntaje2()
     {
         return puntaje2;
+    }
+
+    public void timeGame(int sec)
+    {
+        time = sec;
+    }
+
+    public int getTime()
+    {
+        return time;
     }
 }
