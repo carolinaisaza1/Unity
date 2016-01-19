@@ -4,11 +4,6 @@ using System.Collections;
 public class MoveTo : MonoBehaviour
 {
 	NavMeshAgent agent;
-    public GameObject p1;
-    public GameObject p2;
-    public GameObject p3;
-    public GameObject p4;
-    public GameObject p5;
     //Save save = new Save ();
     //float distance = 0;
     //NavMeshPath path;
@@ -44,41 +39,5 @@ public class MoveTo : MonoBehaviour
 		}
 	}*/
 
-    public void mover(int objeto)
-    {
-        if(objeto == 1)
-        {
-            agent.destination = p1.gameObject.transform.position;
-        }
-        else
-        {
-            if(objeto == 2)
-            {
-                agent.destination = p2.gameObject.transform.position;
-            }
-            else
-            {
-                if(objeto == 3)
-                {
-                    agent.destination = p3.gameObject.transform.position;
-                }
-                else
-                {
-                    if(objeto == 4)
-                    {
-                        agent.destination = p4.gameObject.transform.position;
-                    }
-                    else
-                    {
-                        if(objeto == 5)
-                        {
-                            agent.destination = p5.gameObject.transform.position;
-                        }
-                    }
-                }
-            }
-
-        }
-
-    }
+    
 }

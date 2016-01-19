@@ -22,7 +22,7 @@ public class PickUp1 : MonoBehaviour
     double[] distancesJ1;
     double[] distancesJ2;
     string target;
-    Save save = new Save();
+    //Save save = new Save();
     Puntajes puntaje = new Puntajes();
     Prediction pred = new Prediction();
     void Start()
